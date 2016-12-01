@@ -119,7 +119,16 @@ You have to link dependencies with rnpm and re-run the build:
 1. `react-native run-ios`
 
 ### On Android:
-
+1. Be sure to have `new MapsPackage()` like so, in your `MainApplication.java`:
+   ```
+   @Override
+        protected List<ReactPackage> getPackages() {
+            return Arrays.<ReactPackage>asList(
+                    new MainReactPackage(),
+                    new MapsPackage()
+            );
+        }
+   ```
 1. Set this Stylesheet in your map component
    ```
    ...
